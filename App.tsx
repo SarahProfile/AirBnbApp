@@ -15,8 +15,9 @@ import {
 } from 'react-native';
 import HomeScreen from './src/screens/Home';
 import Post from './src/components/post';
+import feed from './assets/data/feed';
 
-
+const post1= feed[0];
 
 
 
@@ -27,7 +28,7 @@ function App(): JSX.Element {
     <StatusBar />
     <SafeAreaView >
     {/* <HomeScreen/>*/}
-    <Post/>
+    <Post post = {post1}/>
     </SafeAreaView>
     </>
   );
