@@ -16,6 +16,7 @@ import {
 import HomeScreen from './src/screens/Home';
 import Post from './src/components/post';
 import feed from './assets/data/feed';
+import SearchResultsPage from './src/screens/searchResults';
 
 const post1= feed[0];
 
@@ -28,7 +29,8 @@ function App(): JSX.Element {
     <StatusBar />
     <SafeAreaView >
     {/* <HomeScreen/>*/}
-    <Post post = {post1}/>
+   { /*<Post post = {post1}/>*/}
+   <SearchResultsPage/>
     </SafeAreaView>
     </>
   );
