@@ -18,6 +18,7 @@ import Post from './src/components/post';
 import feed from './assets/data/feed';
 import SearchResultsPage from './src/screens/searchResults';
 import DestinationSearchScreen from './src/screens/destinationSearch';
+import GuestsScreen from './src/screens/Guests';
 
 const post1= feed[0];
 
@@ -32,7 +33,8 @@ function App(): JSX.Element {
     {/* <HomeScreen/>*/}
    { /*<Post post = {post1}/>*/}
     {/*<SearchResultsPage/>*/}
-   <DestinationSearchScreen/>
+   {/*<DestinationSearchScreen/>*/}
+   <GuestsScreen/>
     </SafeAreaView>
     </>
   );
