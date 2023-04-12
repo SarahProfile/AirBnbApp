@@ -4,6 +4,7 @@
  *
  * @format
  */
+import 'react-native-gesture-handler'
 import Entype from 'react-native-vector-icons/Entypo';
 import React from 'react';
 import type {PropsWithChildren} from 'react';
@@ -19,6 +20,7 @@ import feed from './assets/data/feed';
 import SearchResultsPage from './src/screens/searchResults';
 import DestinationSearchScreen from './src/screens/destinationSearch';
 import GuestsScreen from './src/screens/Guests';
+import Router from './src/navigation/Router';
 
 const post1= feed[0];
 
@@ -29,13 +31,7 @@ function App(): JSX.Element {
 
   return (<>
     <StatusBar />
-    <SafeAreaView >
-    {/* <HomeScreen/>*/}
-   { /*<Post post = {post1}/>*/}
-    {/*<SearchResultsPage/>*/}
-   {/*<DestinationSearchScreen/>*/}
-   <GuestsScreen/>
-    </SafeAreaView>
+     <Router/>
     </>
   );
 }
