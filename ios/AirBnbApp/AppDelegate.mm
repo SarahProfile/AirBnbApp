@@ -1,6 +1,7 @@
 #import "AppDelegate.h"
 
 #import <React/RCTBundleURLProvider.h>
+#import <GoogleMaps/GoogleMaps.h>
 
 @implementation AppDelegate
 
@@ -30,6 +31,7 @@
 /// @return: `true` if the `concurrentRoot` feature is enabled. Otherwise, it returns `false`.
 - (BOOL)concurrentRootEnabled
 {
+  [GMSServices provideAPIKey:@"AIzaSyBYVwao1gtsqNxk_CSC33znNvOCusC8Ac8"];
   return true;
 }
 
