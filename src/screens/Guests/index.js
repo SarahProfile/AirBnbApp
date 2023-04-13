@@ -107,7 +107,7 @@ function GuestsScreen() {
          <Pressable onPress={()=> navigation.navigate('Home',
          {screen:'Explore',
            params:{
-            screen:'searchResults',
+            screen:'SearchResults',
            }
          }
          ) }

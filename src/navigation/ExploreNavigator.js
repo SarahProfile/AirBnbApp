@@ -1,9 +1,8 @@
-
- import React from 'react';
+import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import Home from '../screens/Home';
-import searchResults from '../screens/searchResults';
+import HomeScreen from '../screens/Home';
 
+import SearchResultsTabNavigator from "./SearchResultsTabNavigator";
 
 const Stack = createStackNavigator();
 
@@ -11,24 +10,21 @@ const Router = (props) => {
   return (
     <Stack.Navigator>
 
-  
-
-   
-       <Stack.Screen
+      {<Stack.Screen
         name={'Welcome'}
-        component={Home}
+        component={HomeScreen}
         options={{
           headerShown: false,
         }}
-      
-      />
-        <Stack.Screen
+      />}
+
+      <Stack.Screen
         name={'SearchResults'}
-        component={searchResults}
+        component={SearchResultsTabNavigator}
         options={{
           title: 'Search your destination',
         }}
-      /> 
+      />
     </Stack.Navigator>
   );
 };
