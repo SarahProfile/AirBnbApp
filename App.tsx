@@ -21,7 +21,9 @@ import SearchResultsPage from './src/screens/searchResults';
 import DestinationSearchScreen from './src/screens/destinationSearch';
 import GuestsScreen from './src/screens/Guests';
 import Router from './src/navigation/Router';
+import {enableLatestRenderer} from 'react-native-maps';
 
+enableLatestRenderer();
 
 const post1= feed[0];
 

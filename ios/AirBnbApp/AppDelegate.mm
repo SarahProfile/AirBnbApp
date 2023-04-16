@@ -4,9 +4,10 @@
 #import <GoogleMaps/GoogleMaps.h>
 
 @implementation AppDelegate
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+
 {
+ // add this line using the api key obtained from Google Console
   self.moduleName = @"AirBnbApp";
   // You can add your custom initial props in the dictionary below.
   // They will be passed down to the ViewController used by React Native.
@@ -14,7 +15,11 @@
 
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
-
+- (BOOL)concurrentRootEnabled
+{
+  [GMSServices provideAPIKey:@"AIzaSyBYVwao1gtsqNxk_CSC33znNvOCusC8Ac8"];
+  return true;
+}
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
 {
 #if DEBUG
@@ -29,10 +34,6 @@
 /// @see: https://reactjs.org/blog/2022/03/29/react-v18.html
 /// @note: This requires to be rendering on Fabric (i.e. on the New Architecture).
 /// @return: `true` if the `concurrentRoot` feature is enabled. Otherwise, it returns `false`.
-- (BOOL)concurrentRootEnabled
-{
-  [GMSServices provideAPIKey:@"AIzaSyBYVwao1gtsqNxk_CSC33znNvOCusC8Ac8"];
-  return true;
-}
+
 
 @end

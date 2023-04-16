@@ -1,17 +1,24 @@
 import { View, Text,useRef } from 'react-native'
-import React from 'react'
-import MapView, { Marker,PROVIDER_GOOGLE } from 'react-native-maps'
+//import React,{ useState } from 'react'
+import MapView, { Marker,PROVIDER_GOOGLE} from 'react-native-maps'
 import PostCarouseltem from '../../components/PostCarouseltem'
+import places from '../../../assets/data/feed'
+import CustmMarker from '../../components/CustomMarker'
+import { useState } from 'react'
+
 
 const SearchResultsMap = (props) => {
   const { posts } = props;
+  const [selectedPlaceId, setSelectedPlaceId]= useState(null)
   //const map = useRef();
+ // const googleMap= useState(PROVIDER_DEFAULT)
   return (
     <View style={{width: '100%', height: '100%'}}>
        <MapView
-       // ref={map}
+      // ref={map}
+      // provider={PROVIDER_GOOGLE}
         style={{width: '100%', height: '100%'}}
-       //provider={PROVIDER_GOOGLE}
+       
         initialRegion={{
           latitude: 28.3279822,
           longitude: -16.5124847,
@@ -19,17 +26,15 @@ const SearchResultsMap = (props) => {
           longitudeDelta: 0.8,
         }}
       >
-      <Marker 
-      coordinate={{latitude: 28.3279822,
-        longitude: -16.5124847,}}
+        {places.map(place => (
+        <CustmMarker 
+        coordinate={place.coordinate}
+        price={place.newPrice}
+        isSelected={place.id === selectedPlaceId}
+        onPress={() => setSelectedPlaceId(place.id)}
+        />)
+      )}
      
-      >
-        <View>
-          <Text>
-            $300
-          </Text>
-        </View>
-        </Marker>
         
       </MapView>
     
