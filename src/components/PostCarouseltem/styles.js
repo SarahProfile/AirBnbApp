@@ -2,14 +2,20 @@ import { StyleSheet } from "react-native";
 
 const styles =StyleSheet.create({
     container:{
-        margin:20
-
-    },
+       height:120,
+      padding:5,
+},
+innerContainer:{
+    flexDirection:'row',
+    backgroundColor:'white',
+    borderRadius:10,
+    overflow:'hidden'
+},
     image:{
-        width:'100%',
-        aspectRatio:3/2,
+        height:'100%',
+        aspectRatio:1,
         resizeMode:'cover',
-        borderRadius:10
+       
     },
     bedrooms:
     {

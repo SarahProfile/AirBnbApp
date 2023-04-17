@@ -37,7 +37,10 @@ const SearchResultsMap = (props) => {
      
         
       </MapView>
-    
+      <View style={{position:'absolute', bottom:40}}>
+      <PostCarouseltem post={places[0]}/>
+      </View>
+     
       </View>
   )
 }

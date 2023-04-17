@@ -1,16 +1,19 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, useWindowDimensions } from 'react-native'
 import React from 'react'
-import styles from './style'
+import styles from './styles'
 
 const Post = (props) => {
-   post= props.post;
+  const post= props.post;
+   const width = useWindowDimensions().width;
   return (
-    <View style={styles.container}>
+    <View style={[styles.container,{width:width - 60}]}>
+      <View style={styles.innerContainer}>
      {/* Image */}
      <Image 
      style={styles.image}
      source={{uri:post.image}}
      />
+     <View style={{marginHorizontal: 5, flex:1}}>
      {/* Bed & Bedroom */}
      <Text style={styles.bedrooms}>
        {post.bed} Bed {post.bedroom} Bedroom
@@ -21,18 +24,14 @@ const Post = (props) => {
      </Text>
      {/*old price & new price */}
      <Text style={styles.prices}>
-        <Text style={styles.oldPrice}>
-          {post.oldPrice}$ 
-        </Text>
+       
         <Text style={styles.newPrice}>
-           {post.newPrice}$
-        </Text>
-        / night
+        ${post.newPrice} </Text>
+          / night
      </Text>
-     {/* Total price */}
-     <Text style={styles.totalPrice}>
-    {post.totalPrice}$ total
-     </Text>
+    
+    </View>
+    </View>
     </View>
   )
 }
