@@ -4,6 +4,11 @@ const styles =StyleSheet.create({
     container:{
        height:120,
       padding:5,
+      shadowColor:'#000',
+      textShadowOffset:{
+        width:0,
+        height:5,
+      }
 },
 innerContainer:{
     flexDirection:'row',
@@ -24,11 +29,11 @@ innerContainer:{
     },
     describtion:
     {
-        fontSize:18,
-        lineHeight:26,
+        fontSize:15,
+       
     },
     prices:{
-      fontSize:18,
+      fontSize:15,
       marginVertical:10,
     },
     oldPrice:{
